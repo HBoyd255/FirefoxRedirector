@@ -28,7 +28,7 @@ in a location different to "C:\\Program Files\\Mozilla Firefox".
 * after compiling, Foxy.exe, OpenFirefox.VBSand and OpenFirefox.py are required to be kept in the same directory,
 all other files can be removed.
 * If you use Wox, the plugins "Browser Bookmarks", "URL" and "Web search" all work with Foxy.exe
-To set this up, in Wox settings, select each of these plugins, next to "Please set your browser path:" press "Choose" and then find Foxy.exe.
+To set this up, in Wox settings, select each of these plugins, next to "Please set your browser path:" press "Choose" and then find Foxy.exe. Make sure to set "Open bookmark in:" to "New tab" otherwise it will not work properly.
 
 ## Dependencies
 
