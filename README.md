@@ -1,5 +1,7 @@
 # Firefox Redirector
 
+WARNING - Script is currently broken until pyvda updates.
+
 This script is used to open firefox on the correct screen.
 
 By default firefox will open new tabs in the most recent firefox instance,
