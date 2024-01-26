@@ -1,16 +1,22 @@
 import sys
 import os
-from pyvda import get_apps_by_z_order
+
+# from pyvda import get_apps_by_z_order
+
 import psutil
 import win32process
 
 FIREFOX_LOCATION = "C:\\Program Files\\Mozilla Firefox"
 
+# As pyvda vision 0.3.2 does not currently work with the most recent windows
+# update, bypass its function.
+BYPASS_PYVDA = True
+
 # This script takes arguments and passes them to firefox,
 # if an instance of firefox does not exist on the current virtual desktop, it opens a new window.
 
 
-# Tests if an app with a specific name is open in this virtual desktop.
+# # Tests if an app with a specific name is open in this virtual desktop.
 def app_exists_on_current_desktop(target_application_name):
     # Gets a list of the open windows on the current virtual desktop.
     open_windows = get_apps_by_z_order()
@@ -42,6 +48,11 @@ def main():
 
     # Combine the arguments received  by this script into one string.
     arguments = " ".join(sys.argv[1:])
+
+    # If the bypass flag is enabled, directly call firefox to open in a new tab.
+    if BYPASS_PYVDA:
+        os.system(f'firefox.exe "{arguments}"')
+        return
 
     # If there is no instance of firefox on this virtual desktop, open firefox as a new window.
     if app_exists_on_current_desktop("firefox") == 0:
