@@ -1,10 +1,14 @@
 import sys
 import os
 
+# TODO Fix the desktop detection function.
+# Without the function, the script is just a shell, that executes firefox with 
+# the arguments passed to it, and provides no functionality to the user.
+
 # from pyvda import get_apps_by_z_order
+# import win32process
 
 import psutil
-import win32process
 
 FIREFOX_LOCATION = "C:\\Program Files\\Mozilla Firefox"
 
